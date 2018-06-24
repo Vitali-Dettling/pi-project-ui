@@ -9,6 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "karma": "cd ./node_modules/karma/bin/ && karma start",
     "front": "ng serve --disable-host-check"
   },
   "private": true,

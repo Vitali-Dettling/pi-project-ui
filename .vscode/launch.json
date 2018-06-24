@@ -14,11 +14,23 @@
             ]
         },
         {
-            "type": "chrome",
+            "type": "node",
             "request": "launch",
-            "name": "front",
-            "url": "http://localhost:3000",
-            "webRoot": "${workspaceFolder}"
+            "name": "karma",
+            "program": "${workspaceFolder}/client/node_modules/karma/bin/karma",
+            "args": [
+                "start",
+                "${workspaceFolder}/client/karma.conf.js"
+            ]
+        }
+    ],
+    "compounds": [
+        {
+            "name": "UI Test",
+            "configurations": [
+                // "back",
+                "karma"
+            ]
         }
     ]
 }

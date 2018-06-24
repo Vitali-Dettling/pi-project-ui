@@ -8,7 +8,7 @@ yarn-error.log*
 # Customize
 .vscode
 doc
-package-lock.json
+*lock.json
 
 # Runtime data
 pids
