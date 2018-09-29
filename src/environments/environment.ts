@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:4000'
+  apiUrl: 'ws://blaic88.hopto.org:3000/' 
 };
 
 /*
