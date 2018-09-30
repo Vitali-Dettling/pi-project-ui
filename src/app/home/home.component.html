@@ -7,4 +7,26 @@
         - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
     </li>
 </ul>
+
+<div style="text-align:left">
+  <h3>
+    What to do?
+  </h3>
+  <button (click)="help()">Help</button>
+  <button (click)="pic()">Pic</button>
+  <button (click)="video()">Video</button>
+</div>
+
+<div style="text-align:center">
+    <h3>
+        Image Number: {{num}}
+    </h3>
+    <img [src]="imageToShow"
+      alt="Picture taken!"
+      *ngIf="!isImageLoading; else noImageFound">
+    <ng-template #noImageFound>
+          <img src="fallbackImage.png" alt="Fallbackimage">
+    </ng-template>
+  </div>
+
 <p><a [routerLink]="['/login']">Logout</a></p>

@@ -2,12 +2,11 @@
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
-import { WebSocketService } from './client';
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
 
-    constructor(private socket: WebSocketService) { }
+    constructor() { }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // array in local storage for registered users
@@ -34,7 +33,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                         token: 'fake-jwt-token'
                     };
 
-                    return this.socket.send('test');
+                    return of(new HttpResponse({ status: 200, body: body }));
                 } else {
                     // else return 400 bad request
                     return throwError({ error: { message: 'Username or password is incorrect' } });
