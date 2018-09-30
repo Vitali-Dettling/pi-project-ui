@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://blaic88.hopto.org:3000/' 
+  apiUrl: 'http://blaic88.hopto.org:3000/pic' 
 };
 
 /*
